@@ -1,24 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Weather_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HyF-ZA-9VC">
+                                <rect key="frame" x="10" y="58" width="124" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="uwM-Z4-qS2"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Morning">
+                                            <attributes>
+                                                <font key="NSFont" size="16" name=".SFNS-Regular"/>
+                                                <font key="NSOriginalFont" size="16" name="AlBayan"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="morningTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dvr-g9-eVK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hmu-R9-qcR">
+                                <rect key="frame" x="145" y="58" width="124" height="70"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Day"/>
+                                <connections>
+                                    <action selector="dayTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p43-zs-L1x"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeP-fm-Hbi">
+                                <rect key="frame" x="280" y="58" width="124" height="70"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Afternoon"/>
+                                <connections>
+                                    <action selector="AfternonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vKf-ij-9Px"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zLz-ML-Saz">
+                                <rect key="frame" x="10" y="138" width="394" height="448"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="leZ-xT-Tmp">
+                                <rect key="frame" x="10" y="596" width="394" height="256"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5H-2B-hwv">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="85.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rain" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBm-KS-BfW">
+                                        <rect key="frame" x="0.0" y="85.5" width="394" height="85"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fxr-Si-Zbc">
+                                        <rect key="frame" x="0.0" y="170.5" width="394" height="85.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Hmu-R9-qcR" firstAttribute="height" secondItem="HyF-ZA-9VC" secondAttribute="height" id="5NZ-yu-fDw"/>
+                            <constraint firstItem="Hmu-R9-qcR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6Fo-XG-hi1"/>
+                            <constraint firstItem="zLz-ML-Saz" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="6bf-55-e0C"/>
+                            <constraint firstItem="Hmu-R9-qcR" firstAttribute="width" secondItem="HyF-ZA-9VC" secondAttribute="width" id="9HF-cU-IXO"/>
+                            <constraint firstItem="LeP-fm-Hbi" firstAttribute="height" secondItem="HyF-ZA-9VC" secondAttribute="height" id="9XL-R2-12T"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="leZ-xT-Tmp" secondAttribute="trailing" constant="10" id="Ddh-g6-UHF"/>
+                            <constraint firstItem="HyF-ZA-9VC" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.3" id="EGQ-uK-5eG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zLz-ML-Saz" secondAttribute="trailing" constant="10" id="KPp-sg-iBU"/>
+                            <constraint firstItem="Hmu-R9-qcR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="Mgx-Y3-FCN"/>
+                            <constraint firstItem="leZ-xT-Tmp" firstAttribute="top" secondItem="zLz-ML-Saz" secondAttribute="bottom" constant="10" id="Nvy-fH-0iU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="leZ-xT-Tmp" secondAttribute="bottom" constant="10" id="Zas-Fp-dbI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LeP-fm-Hbi" secondAttribute="trailing" constant="10" id="aaY-sl-LY0"/>
+                            <constraint firstItem="leZ-xT-Tmp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="gd3-6x-ipM"/>
+                            <constraint firstItem="LeP-fm-Hbi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="ib9-ac-qT2"/>
+                            <constraint firstItem="zLz-ML-Saz" firstAttribute="top" secondItem="HyF-ZA-9VC" secondAttribute="bottom" constant="10" id="lQN-2i-OWN"/>
+                            <constraint firstItem="zLz-ML-Saz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="osf-9y-XtC"/>
+                            <constraint firstItem="LeP-fm-Hbi" firstAttribute="width" secondItem="HyF-ZA-9VC" secondAttribute="width" id="s72-UP-1dH"/>
+                            <constraint firstItem="HyF-ZA-9VC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="vo0-lB-Acf"/>
+                            <constraint firstItem="HyF-ZA-9VC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="wcE-TD-FD5"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageWatherView" destination="zLz-ML-Saz" id="lKz-01-Pnh"/>
+                        <outlet property="rainLabel" destination="XBm-KS-BfW" id="BY9-3Q-Ejc"/>
+                        <outlet property="tempLabel" destination="B5H-2B-hwv" id="v4P-1S-cab"/>
+                        <outlet property="timeLabel" destination="Fxr-Si-Zbc" id="6sA-bG-Sce"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="101.44927536231884" y="3.3482142857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
